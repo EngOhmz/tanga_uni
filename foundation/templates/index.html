@@ -1,0 +1,391 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="5" class="marquee-text">
+        Welcome to the Tanga University Foundation, dedicated to supporting education, fostering community engagement, and promoting academic excellence in the Tanga region. Join us in making a difference!
+    </marquee>
+</div>
+
+<style>
+    .marquee-container {
+width: 100%;
+background-color: #fff; /* Change to your desired background color */
+padding: 10px 0;
+text-align: center;
+}
+
+.marquee-text {
+font-size: 15px;
+color: #5bc1ac; /* Text color */
+font-weight: bold;
+
+}
+
+</style>
+
+<!-- Hero Carousel Section -->
+<section id="hero-carousel" class="position-relative">
+<div id="tangaHeroCarousel" class="carousel slide" data-bs-ride="false">
+  <!-- Carousel Inner -->
+  <div class="carousel-inner" style="min-height: 60vh;">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="d-flex align-items-center min-vh-60" style="background: linear-gradient(rgba(32, 56, 100, 0.85), rgba(77, 182, 172, 0.85)), url('assets/img/tanga-foundation-bg.jpg') center/cover no-repeat;">
+        <div class="container">
+          <div class="row align-items-center">
+            
+            <!-- Text Section -->
+            <div class="col-lg-6 text-white">
+              <h1 class="fw-bold display-4 mb-3 text-white">Welcome to <span class="text-white">Tanga Uni Foundation</span></h1>
+              <p class="fs-5 mb-4 text-white">Empowering graduates to drive impactful change in Tanga and beyond.</p>
+              <ul class="list-unstyled fs-6 mb-4 text-white">
+                <li class="mb-2 text-white">
+                  <i class="bi bi-people-fill me-2" style="color: #ffca28;"></i>
+                  Community Development Projects
+                </li>
+                <li class="mb-2 text-white">
+                  <i class="bi bi-journal-check me-2" style="color: #ffca28;"></i>
+                  Graduate Volunteer Programs
+                </li>
+                <li class="text-white">
+                  <i class="bi bi-shield-lock-fill me-2" style="color: #ffca28;"></i>
+                  Trustworthy & Transparent Initiatives
+                </li>
+              </ul>
+              <a href="register.html" class="btn btn-outline-light btn-lg px-4">Get Involved</a>
+            </div>
+
+            <!-- Image Carousel with Captions -->
+            <div class="col-lg-6 text-center mt-4 mt-lg-0">
+              <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded-4 shadow-lg position-relative">
+                  <div class="carousel-item active position-relative">
+                    <img src="images/charity/pic3.jpg" class="img-fluid rounded-4 shadow-sm border" alt="Outreach 1" style="height: 350px; width: 350px;">
+
+                    <div class="carousel-caption">
+                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Make them to enjoy</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item position-relative">
+                    <img src="images/tanga_charity/pic15.jpeg" class="img-fluid rounded-4" alt="Outreach 2" style="height: 350px; width: 350px;">
+                    <div class="carousel-caption">
+                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Cakes session</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item position-relative">
+                    <img src="images/tanga_charity/pic1.jpeg" class="img-fluid rounded-4" alt="Outreach 3" style="height: 350px; width: 350px;">
+                    <div class="carousel-caption">
+                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Humanitarian Support</p>
+                    </div>
+                  </div>
+                  <!-- add -->
+                  <div class="carousel-item position-relative">
+                    <img src="images/tanga_charity/pic3.jpeg" class="img-fluid rounded-4" alt="Outreach 3" style="height: 350px; width: 350px;">
+                    <div class="carousel-caption">
+                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Enjoy with them</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item position-relative">
+                    <img src="images/tanga_charity/pic4.jpeg" class="img-fluid rounded-4" alt="Outreach 3" style="height: 350px; width: 350px;">
+                    <div class="carousel-caption">
+                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Enjoy with moment</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <!-- End Carousel -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WELCOME SECTION -->
+<section id="who-we-are" class="section" style="padding: 40px 0 10px 0; background-color: #f4faff;">
+<div class="container" data-aos="fade-up">
+<div class="section-title text-center mb-4">
+  <h2 style="color: #5bc1ac; font-weight: 700;">Who Are Tanga University Foundation?</h2>
+  <p style="max-width: 850px; margin: 0 auto; color: #555; font-size: 17px;">
+    <strong>Tanga University Foundation</strong> is a volunteer-driven movement uniting students and graduates from various universities who have roots in the Tanga region. We exist to bring together youth under one umbrella to collaborate, serve, and build a better community through humanity and togetherness.
+    <br><br>
+    Our mission is to <em>organize, empower, and act</em> — we engage in <strong>charity work</strong>, <strong>volunteering</strong> (kujitoa kwa moyo mmoja), and <strong>participating in social activities</strong> that call upon the youth, particularly in Tanga. Whether it’s responding to community needs, supporting education, or contributing to events that benefit the region, we believe in doing things together — because unity is our strength.
+  </p>
+</div>
+</div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="services section" style="background-color: #f9fafe; padding: 30px 0 70px 0;">
+<div class="container" data-aos="fade-up">
+
+<!-- Section Title -->
+<div class="section-title text-center mb-5">
+  <h2 style="color: #5bc1ac; font-weight: 700;">What We Do Together</h2>
+  <p style="max-width: 700px; margin: 0 auto; color: #555;">
+    Tanga University Foundation brings together university students and graduates to unite their efforts in charity, volunteering, and youth-driven initiatives. We work together for community empowerment, social change, and sustainable development across Tanga and beyond.
+  </p>
+</div>
+
+
+<!-- Services Grid -->
+<div class="row gy-5">
+
+  <!-- Unity Through Collaboration -->
+  <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+    <div class="card h-100 shadow-sm border-0 p-4 rounded-4 text-center">
+      <div class="icon mb-3" style="font-size: 2.5rem; color: #5bc1ac;">
+        <i class="bi bi-people-fill"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #5bc1ac;">Unity & Collaboration</h5>
+      <p class="text-muted">We bring together students and graduates from various universities to collaborate on community-driven projects, empowering youth to lead and make a lasting impact.</p>
+    </div>
+  </div>
+
+  <!-- Charity & Volunteering Initiatives -->
+  <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+    <div class="card h-100 shadow-sm border-0 p-4 rounded-4 text-center">
+      <div class="icon mb-3" style="font-size: 2.5rem; color: #5bc1ac;">
+        <i class="bi bi-heart-fill"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #5bc1ac;">Charity & Volunteering</h5>
+      <p class="text-muted">Our foundation organizes charity events and volunteering opportunities for students to give back to their communities and make a positive difference in the lives of others.</p>
+    </div>
+  </div>
+
+  <!-- Youth Empowerment Through Participation -->
+  <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+    <div class="card h-100 shadow-sm border-0 p-4 rounded-4 text-center">
+      <div class="icon mb-3" style="font-size: 2.5rem; color: #5bc1ac;">
+        <i class="bi bi-mortarboard-fill"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #5bc1ac;">Youth Empowerment</h5>
+      <p class="text-muted">We provide platforms for youth to engage in activities that address local issues and contribute to community development, focusing on initiatives that require the energy and creativity of the younger generation.</p>
+    </div>
+  </div>
+
+  <!-- Regional Development & Sustainability -->
+  <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+    <div class="card h-100 shadow-sm border-0 p-4 rounded-4 text-center">
+      <div class="icon mb-3" style="font-size: 2.5rem; color: #5bc1ac;">
+        <i class="bi bi-globe-americas"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #5bc1ac;">Regional Development</h5>
+      <p class="text-muted">Through sustainable projects, we engage students and graduates to contribute towards regional development in Tanga, promoting educational growth, environmental protection, and economic progress.</p>
+    </div>
+  </div>
+
+  <!-- Humanitarian Causes & Support -->
+  <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+    <div class="card h-100 shadow-sm border-0 p-4 rounded-4 text-center">
+      <div class="icon mb-3" style="font-size: 2.5rem; color: #5bc1ac;">
+        <i class="bi bi-heart-pulse"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #5bc1ac;">Humanitarian Support</h5>
+      <p class="text-muted">We organize and participate in humanitarian projects that provide support to vulnerable communities, ensuring no one is left behind in the quest for a better, more equitable society.</p>
+    </div>
+  </div>
+
+  <!-- Educational Support & Scholarships -->
+  <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+    <div class="card h-100 shadow-sm border-0 p-4 rounded-4 text-center">
+      <div class="icon mb-3" style="font-size: 2.5rem; color: #5bc1ac;">
+        <i class="bi bi-journal-bookmark-fill"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #5bc1ac;">Educational Support</h5>
+      <p class="text-muted">We provide academics support, learning materials, and mentoring to ensure that students from all backgrounds, especially in Tanga, can access quality education and achieve their full potential.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- Tanga Uni Foundation Events Section -->
+<section id="foundation-events" class="py-5" style="background-color: #f8f9fa;">
+<div class="container">
+<div class="text-center mb-5">
+  <h2 class="fw-bold" style="color: #5bc1ac;">Our Events & Activities</h2>
+  <p class="text-muted">We actively engage in events that empower students and uplift communities across Tanga.</p>
+</div>
+
+<div class="row g-4">
+  <!-- Environmental Cleanup -->
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm h-100">
+      <img src="images/tanga_charity/pic10.jpeg" class="card-img-top rounded-top" alt="Cleanup Activity">
+      <div class="card-body">
+        <h5 class="card-title text-center" style="color: #5bc1ac;">Environmental Cleanups</h5>
+        <p class="card-text text-center">Team participate in cleaning campaigns to promote a cleaner, greener Tanga region.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Educational Seminars -->
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm h-100">
+      <img src="images/tanga_charity/pic11.jpeg" class="card-img-top rounded-top" alt="Seminar Session">
+      <div class="card-body">
+        <h5 class="card-title text-center" style="color: #5bc1ac;">Knowledge Seminars</h5>
+        <p class="card-text text-center">We organize seminars on leadership, innovation, and career development for youth empowerment.</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Community Outreach -->
+  <div class="col-md-4">
+    <div class="card border-0 shadow-sm h-100">
+      <img src="images/tanga_charity/pic12.jpeg" class="card-img-top rounded-top" alt="Outreach Program">
+      <div class="card-body">
+        <h5 class="card-title text-center" style="color: #5bc1ac;">Community Outreach</h5>
+        <p class="card-text text-center">We extend support to rural schools and families, delivering essentials and mentorship programs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+<!-- CTA JOIN US -->
+<section class="section-padding text-white text-center" style="background: white;">
+<div class="container">
+  <h2 class="mb-3" style="color: #5bc1ac;">Be Part of the Movement</h2>
+  <p class="mb-4" style="color: #5bc1ac;">Whether you're a student, graduate, or a supporter—your participation matters. Join us in making a difference across Tanga and beyond.</p>
+  <a href="register.html" class="btn btn-light btn-lg rounded-pill px-4" style="background-color: #5bc1ac; color: white;">Join Us Now</a>
+</div>
+</section>
+
+
+<!-- STYLES -->
+<style>
+.text-shadow {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.img-medium {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.featured-block img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.featured-block h5 {
+  margin-top: 10px;
+  font-weight: 600;
+}
+</style>
+
+
+<!-- Important News Section for Tanga University Foundation -->
+<section id="important-news" class="section" style="background-color: #fff7fc; padding: 60px 0;">
+<div class="container" data-aos="fade-up">
+<div class="text-center mb-5">
+  <h2 style="color: #5bc1ac; font-weight: 700;">📢 Latest News & Updates</h2>
+  <p style="color: #444;">Stay updated with the latest initiatives, events, and announcements from Tanga University Foundation</p>
+</div>
+
+<div class="row justify-content-center">
+
+  <!-- News Item 1 -->
+  <div class="col-lg-6 col-md-8 mb-4">
+    <div style="background: #fff; border-left: 6px solid #5bc1ac; border-radius: 12px; padding: 20px 20px 20px 70px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative;">
+      <!-- Icon/GIF Positioned Left -->
+      <div style="position: absolute; top: 15px; left: 15px;">
+        <img src="images/Newnew1.gif" alt="New" style="width: 40px;">
+      </div>
+      <h5 style="color: #5bc1ac;">Upcoming Youth Empowerment Summit – August 2025</h5>
+      <p style="color: #555;">
+        We're excited to announce our Event <strong>Giving for charity Season 3</strong> happening on 
+        <strong>August, 2025</strong> in Tanga. This event will bring together students, graduates, and leaders 
+        to collaborate in community-driven projects and future collaborations.
+      </p>
+      <a href="news.html" class="btn btn-primary px-4 py-2 rounded-pill" style="background-color: #5bc1ac; border: none;">
+        View More News
+      </a>
+    </div>
+  </div>
+
+  <!-- You can duplicate the above block for more news items -->
+
+</div>
+</div>
+</section>
+
+<!-- How to Join Section for Tanga Uni Foundation -->
+<section id="how-to-join" class="py-5" style="background-color: #f7faff;">
+<div class="container">
+<div class="text-center mb-5">
+  <h2 class="fw-bold" style="color: #203864;">How Can I Join <span style="color: #5bc1ac;">Tanga Uni Foundation?</span></h2>
+  <p class="fs-5 text-muted">Take these simple steps to become part of our mission for positive change and community impact.</p>
+</div>
+
+<div class="row text-center g-4">
+  <!-- Step 1 -->
+  <div class="col-md-4">
+    <div class="p-4 border rounded-4 shadow-sm bg-white h-100">
+      <div class="mb-3">
+        <i class="bi bi-journal-plus fs-1" style="color: #203864;"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #203864;">Step 1: Submit Your Application</h5>
+      <p class="text-muted">Fill out our online volunteer/member application form to express your interest.</p>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="col-md-4">
+    <div class="p-4 border rounded-4 shadow-sm bg-white h-100">
+      <div class="mb-3">
+        <i class="bi bi-people-fill fs-1" style="color: #5bc1ac;"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #5bc1ac;">Step 2: Attend an Orientation</h5>
+      <p class="text-muted">Join our briefing session to learn more about our goals, values, and your role.</p>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="col-md-4">
+    <div class="p-4 border rounded-4 shadow-sm bg-white h-100">
+      <div class="mb-3">
+        <i class="bi bi-patch-check-fill fs-1" style="color: #203864;"></i>
+      </div>
+      <h5 class="fw-bold" style="color: #203864;">Step 3: Become an Official Member</h5>
+      <p class="text-muted">Start contributing to our activities and help drive sustainable regional and social development.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action Button -->
+<div class="text-center mt-5">
+  <a href="register.html" class="btn btn-lg fw-semibold" style="background-color: #5bc1ac; color: white;">Join Us Now</a>
+</div>
+</div>
+</section>
+
+
+
+{% endblock %}

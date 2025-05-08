@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="team" class="team section" style="background-color: #f9f9f9;">
+  <div class="container section-title text-center" data-aos="fade-up">
+    <br><br><br>
+    <h2 style="color: #5bc1ac;">Meet Our Leadership Team</h2>
+    <p style="color: #5bc1ac;">Dedicated, passionate, and committed to guiding our institution towards excellence.</p>
+  </div>
+
+  <div class="container mb-4">
+    <div class="rounded shadow-sm" style="background-color: #eafaf7; border-left: 5px solid #5bc1ac;">
+      <marquee behavior="scroll" direction="left" scrollamount="5" style="color: #5bc1ac; font-size: 16px; padding: 12px;">
+        Meet the distinguished leaders of Tanga Uni Foundation who are committed to ensuring the growth and success of our institution and better responsibilities.
+      </marquee>
+    </div>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 justify-content-center">
+      {% for leader in leaders %}
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="member text-center" style="border: 1px solid #5bc1ac; padding: 20px; border-radius: 10px; background-color: #fff;">
+          <img src="{{ leader.image.url }}" class="img-fluid rounded-circle mb-3" alt="{{ leader.title }}" style="width: 120px; height: 120px; object-fit: cover;">
+          <h4 style="color: #5bc1ac;">{{ leader.name }}</h4>
+          <span style="color: #5bc1ac;">{{ leader.title }}</span>
+          <p>{{ leader.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

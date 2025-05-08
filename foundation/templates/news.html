@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <section class="news-header-section text-center">
+        <div class="container">
+            <div class="news-gif-section mb-4">
+                <img src="{% static 'images/Newnew1.gif' %}" alt="New News" class="img-fluid" style="max-width: 100px; height: auto;">
+            </div>
+            <h1 class="display-4" style="color: #5bc1ac;">Latest News & Updates</h1>
+        </div>
+        <div class="marquee-section mt-3">
+            <marquee behavior="scroll" direction="left" style="font-size: 18px; color: #5bc1ac; font-weight: bold; padding: 10px 0;">
+                Stay informed with the latest updates on our various events like charity, community programs, and exciting opportunities for our members...
+            </marquee>
+        </div>
+    </section>
+
+    <section class="news-section section-padding">
+        <div class="container">
+            <div class="row">
+                {% for item in news_list %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="{% static 'images/Newnew1.gif' %}" alt="New News" class="img-fluid mb-2" style="max-width: 30px; height: auto;">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">{{ item.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
