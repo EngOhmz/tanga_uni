@@ -1,56 +1,94 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
-
+{% block content %}
 <section class="contact-section section-padding" id="section_6">
-    <div class="container">
-        <div class="row">
-            <!-- Contact Information -->
-            <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
-                <div class="contact-info-wrap">
-                    <h2 style="color:#203864;">Get in Touch</h2>
-                    <div class="contact-info">
-                        <h5 class="mb-3 text-secondary">Contact Information</h5>
-                        <p class="d-flex mb-2"><i class="bi bi-geo-alt-fill me-2 text-primary"></i> Tanga, Tanzania</p>
-                        <p class="d-flex mb-2"><i class="bi bi-telephone-fill me-2 text-primary"></i> 
-                            <a href="tel:+255123456789">+255 123 456 789</a></p>
-                        <p class="d-flex"><i class="bi bi-envelope-fill me-2 text-primary"></i> 
-                            <a href="mailto:info@tangaunifoundation.org">info@tangaunifoundation.org</a></p>
-                        <a href="#" class="btn btn-primary mt-3">Get Directions</a>
-                    </div>
-                </div>
-            </div>
-
-            {% if messages %}
-  {% for message in messages %}
-    <div class="alert alert-{{ message.tags }}">
-      {{ message }}
-    </div>
-  {% endfor %}
-{% endif %}
-
-
-            <!-- Contact Form -->
-            <div class="col-lg-5 col-12 mx-auto">
-                <form class="custom-form contact-form" method="post" role="form" novalidate>
-                    {% csrf_token %}
-                    <h2 style="color:#203864;">Contact Form</h2>
-                    <p class="mb-4">Or, you can just send an email: 
-                        <a href="mailto:info@tangaunifoundation.org">info@tangaunifoundation.org</a>
-                    </p>
-
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            {{ form.first_name }}
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            {{ form.last_name }}
-                        </div>
-                    </div>
-                    {{ form.email }}
-                    {{ form.message }}
-                    <button type="submit" class="btn btn-primary mt-3">Send Message</button>
-                </form>
-            </div>
+  <div class="container">
+    <div class="row">
+      <!-- Contact Info Left -->
+      <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+        <div class="contact-info-wrap">
+          <h2 style="color:#203864;">Get in Touch</h2>
+          <div class="contact-info">
+            <h5 class="mb-3 text-secondary">Contact Information</h5>
+            <p class="d-flex mb-2"><i class="bi bi-geo-alt-fill me-2 text-primary"></i> Tanga, Tanzania</p>
+            <p class="d-flex mb-2"><i class="bi bi-telephone-fill me-2 text-primary"></i> 
+              <a href="tel:+255123456789">+255 123 456 789</a></p>
+            <p class="d-flex"><i class="bi bi-envelope-fill me-2 text-primary"></i> 
+              <a href="mailto:info@tangaunifoundation.org">info@tangaunifoundation.org</a></p>
+            <a href="#" class="btn btn-primary mt-3">Get Directions</a>
+          </div>
         </div>
+      </div>
+
+      <!-- Contact Form Right -->
+      <div class="col-lg-5 col-12 mx-auto">
+        <h2 style="color:#203864;">Contact Form</h2>
+        <p class="mb-4">Or, you can just send an email:
+          <a href="mailto:info@tangaunifoundation.org">info@tangaunifoundation.org</a>
+        </p>
+
+        <!-- Success / Error messages -->
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" style="color:#203864; background-color:#d1e7dd; border-color:#badbcc;">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        <form class="custom-form contact-form" method="post" novalidate>
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-12 mb-3">
+              {{ form.first_name.label_tag }}
+              {{ form.first_name }}
+              {% if form.first_name.errors %}
+                <div class="text-danger small">{{ form.first_name.errors }}</div>
+              {% endif %}
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mb-3">
+              {{ form.last_name.label_tag }}
+              {{ form.last_name }}
+              {% if form.last_name.errors %}
+                <div class="text-danger small">{{ form.last_name.errors }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {% if form.email.errors %}
+              <div class="text-danger small">{{ form.email.errors }}</div>
+            {% endif %}
+          </div>
+
+          <div class="mb-3">
+            {{ form.message.label_tag }}
+            {{ form.message }}
+            {% if form.message.errors %}
+              <div class="text-danger small">{{ form.message.errors }}</div>
+            {% endif %}
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-3" id="submitBtn">Send Message</button>
+          <div id="sendingMessage" class="mt-2" style="display:none; color:#203864; font-weight:bold;">Your message sending...</div>
+        </form>
+      </div>
     </div>
+  </div>
 </section>
+
+<script>
+  const form = document.querySelector('form.contact-form');
+  const sendingMsg = document.getElementById('sendingMessage');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', () => {
+    submitBtn.disabled = true; // disable to prevent double submit
+    sendingMsg.style.display = 'block'; // show sending message
+  });
+</script>
+
+{% endblock %}

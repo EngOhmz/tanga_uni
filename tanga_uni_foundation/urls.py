@@ -19,8 +19,26 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from foundation.views import login_portal  # corrected import
+from foundation.views import custom_logout_view
+
 
 urlpatterns = [
+    
+    # Custom login page
+    path('login/', login_portal, name='login_portal'),
+
+     path('logout/', custom_logout_view, name='logout'),
+
+    # Admin site
     path('admin/', admin.site.urls),
+
+    # App URLs
     path('', include('foundation.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

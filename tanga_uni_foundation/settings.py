@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -57,9 +58,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'tanga_uni_foundation.urls'
 
 
-LOGIN_URL = 'login'  # You can change this name if needed
 LOGIN_REDIRECT_URL = '/admin/'  # Or wherever you want to redirect after login
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'  # This points to your login_portal
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
 
 
 

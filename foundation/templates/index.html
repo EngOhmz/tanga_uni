@@ -26,88 +26,87 @@ font-weight: bold;
 
 </style>
 
+
 <!-- Hero Carousel Section -->
 <section id="hero-carousel" class="position-relative">
-<div id="tangaHeroCarousel" class="carousel slide" data-bs-ride="false">
-  <!-- Carousel Inner -->
-  <div class="carousel-inner" style="min-height: 60vh;">
-    <!-- Slide 1 -->
-    <div class="carousel-item active">
-      <div class="d-flex align-items-center min-vh-60" style="background: linear-gradient(rgba(32, 56, 100, 0.85), rgba(77, 182, 172, 0.85)), url('assets/img/tanga-foundation-bg.jpg') center/cover no-repeat;">
-        <div class="container">
-          <div class="row align-items-center">
-            
-            <!-- Text Section -->
-            <div class="col-lg-6 text-white">
-              <h1 class="fw-bold display-4 mb-3 text-white">Welcome to <span class="text-white">Tanga Uni Foundation</span></h1>
-              <p class="fs-5 mb-4 text-white">Empowering graduates to drive impactful change in Tanga and beyond.</p>
-              <ul class="list-unstyled fs-6 mb-4 text-white">
-                <li class="mb-2 text-white">
-                  <i class="bi bi-people-fill me-2" style="color: #ffca28;"></i>
-                  Community Development Projects
-                </li>
-                <li class="mb-2 text-white">
-                  <i class="bi bi-journal-check me-2" style="color: #ffca28;"></i>
-                  Graduate Volunteer Programs
-                </li>
-                <li class="text-white">
-                  <i class="bi bi-shield-lock-fill me-2" style="color: #ffca28;"></i>
-                  Trustworthy & Transparent Initiatives
-                </li>
-              </ul>
-              <a href="register.html" class="btn btn-outline-light btn-lg px-4">Get Involved</a>
-            </div>
+  <div id="tangaHeroCarousel" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-inner" style="min-height: 60vh;">
+      <div class="carousel-item active">
+       <div class="d-flex align-items-center min-vh-60" style="background: linear-gradient(rgba(32, 56, 100, 0.85), rgba(77, 182, 172, 0.85));">
+          <div class="container">
+            <div class="row align-items-center">
 
-            <!-- Image Carousel with Captions -->
-            <div class="col-lg-6 text-center mt-4 mt-lg-0">
-              <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner rounded-4 shadow-lg position-relative">
-                  <div class="carousel-item active position-relative">
-                    <img src="images/charity/pic3.jpg" class="img-fluid rounded-4 shadow-sm border" alt="Outreach 1" style="height: 350px; width: 350px;">
+              <!-- Text Section -->
+              <div class="col-lg-6 text-white">
+                <h1 class="fw-bold display-4 mb-3 text-white">Welcome to <span class="text-white">Tanga Uni Foundation</span></h1>
+                <p class="fs-5 mb-4 text-white">Empowering graduates to drive impactful change in Tanga and beyond.</p>
+                <ul class="list-unstyled fs-6 mb-4 text-white">
+                  <li class="mb-2 text-white">
+                    <i class="bi bi-people-fill me-2" style="color: #ffca28;"></i> Community Development Projects
+                  </li>
+                  <li class="mb-2 text-white">
+                    <i class="bi bi-journal-check me-2" style="color: #ffca28;"></i> Graduate Volunteer Programs
+                  </li>
+                  <li class="text-white">
+                    <i class="bi bi-shield-lock-fill me-2" style="color: #ffca28;"></i> Trustworthy & Transparent Initiatives
+                  </li>
+                </ul>
+               <a href="{% url 'register' %}" class="btn btn-outline-light btn-lg px-4">Get Involved</a>
 
-                    <div class="carousel-caption">
-                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Make them to enjoy</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item position-relative">
-                    <img src="images/tanga_charity/pic15.jpeg" class="img-fluid rounded-4" alt="Outreach 2" style="height: 350px; width: 350px;">
-                    <div class="carousel-caption">
-                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Cakes session</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item position-relative">
-                    <img src="images/tanga_charity/pic1.jpeg" class="img-fluid rounded-4" alt="Outreach 3" style="height: 350px; width: 350px;">
-                    <div class="carousel-caption">
-                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Humanitarian Support</p>
-                    </div>
-                  </div>
-                  <!-- add -->
-                  <div class="carousel-item position-relative">
-                    <img src="images/tanga_charity/pic3.jpeg" class="img-fluid rounded-4" alt="Outreach 3" style="height: 350px; width: 350px;">
-                    <div class="carousel-caption">
-                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Enjoy with them</p>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item position-relative">
-                    <img src="images/tanga_charity/pic4.jpeg" class="img-fluid rounded-4" alt="Outreach 3" style="height: 350px; width: 350px;">
-                    <div class="carousel-caption">
-                      <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Enjoy with moment</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
               </div>
-            </div>
-            <!-- End Carousel -->
 
+              <!-- Carousel -->
+              <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner rounded-4 shadow-lg position-relative">
+
+                    <div class="carousel-item active position-relative">
+                      <img src="{% static 'images/charity/pic3.jpg' %}" class="img-fluid rounded-4 shadow-sm border" alt="Outreach 1" style="height: 350px; width: 350px;">
+                      <div class="carousel-caption">
+                        <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Make them to enjoy</p>
+                      </div>
+                    </div>
+
+                    <div class="carousel-item position-relative">
+                      <img src="{% static 'images/tanga_charity/pic15.jpeg' %}" class="img-fluid rounded-4" alt="Outreach 2" style="height: 350px; width: 350px;">
+                      <div class="carousel-caption">
+                        <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Cakes session</p>
+                      </div>
+                    </div>
+
+                    <div class="carousel-item position-relative">
+                      <img src="{% static 'images/tanga_charity/pic1.jpeg' %}" class="img-fluid rounded-4" alt="Outreach 3" style="height: 350px; width: 350px;">
+                      <div class="carousel-caption">
+                        <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Humanitarian Support</p>
+                      </div>
+                    </div>
+
+                    <div class="carousel-item position-relative">
+                      <img src="{% static 'images/tanga_charity/pic3.jpeg' %}" class="img-fluid rounded-4" alt="Outreach 4" style="height: 350px; width: 350px;">
+                      <div class="carousel-caption">
+                        <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Enjoy with them</p>
+                      </div>
+                    </div>
+
+                    <div class="carousel-item position-relative">
+                      <img src="{% static 'images/tanga_charity/pic4.jpeg' %}" class="img-fluid rounded-4" alt="Outreach 5" style="height: 350px; width: 350px;">
+                      <div class="carousel-caption">
+                        <p class="bg-dark bg-opacity-50 rounded-3 p-2 text-white">Enjoy with moment</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <!-- End Carousel -->
           </div>
         </div>
       </div>
@@ -225,11 +224,12 @@ font-weight: bold;
   <p class="text-muted">We actively engage in events that empower students and uplift communities across Tanga.</p>
 </div>
 
+
 <div class="row g-4">
   <!-- Environmental Cleanup -->
   <div class="col-md-4">
     <div class="card border-0 shadow-sm h-100">
-      <img src="images/tanga_charity/pic10.jpeg" class="card-img-top rounded-top" alt="Cleanup Activity">
+      <img src="{% static 'images/tanga_charity/pic10.jpeg' %}" class="card-img-top rounded-top" alt="Cleanup Activity">
       <div class="card-body">
         <h5 class="card-title text-center" style="color: #5bc1ac;">Environmental Cleanups</h5>
         <p class="card-text text-center">Team participate in cleaning campaigns to promote a cleaner, greener Tanga region.</p>
@@ -240,19 +240,18 @@ font-weight: bold;
   <!-- Educational Seminars -->
   <div class="col-md-4">
     <div class="card border-0 shadow-sm h-100">
-      <img src="images/tanga_charity/pic11.jpeg" class="card-img-top rounded-top" alt="Seminar Session">
+      <img src="{% static 'images/tanga_charity/pic11.jpeg' %}" class="card-img-top rounded-top" alt="Seminar Session">
       <div class="card-body">
         <h5 class="card-title text-center" style="color: #5bc1ac;">Knowledge Seminars</h5>
         <p class="card-text text-center">We organize seminars on leadership, innovation, and career development for youth empowerment.</p>
       </div>
     </div>
   </div>
-  
 
   <!-- Community Outreach -->
   <div class="col-md-4">
     <div class="card border-0 shadow-sm h-100">
-      <img src="images/tanga_charity/pic12.jpeg" class="card-img-top rounded-top" alt="Outreach Program">
+      <img src="{% static 'images/tanga_charity/pic12.jpeg' %}" class="card-img-top rounded-top" alt="Outreach Program">
       <div class="card-body">
         <h5 class="card-title text-center" style="color: #5bc1ac;">Community Outreach</h5>
         <p class="card-text text-center">We extend support to rural schools and families, delivering essentials and mentorship programs.</p>
@@ -260,11 +259,6 @@ font-weight: bold;
     </div>
   </div>
 </div>
-</div>
-</section>
-
-
-
 
 <!-- CTA JOIN US -->
 <section class="section-padding text-white text-center" style="background: white;">
@@ -311,24 +305,29 @@ font-weight: bold;
 
 <div class="row justify-content-center">
 
-  <!-- News Item 1 -->
-  <div class="col-lg-6 col-md-8 mb-4">
-    <div style="background: #fff; border-left: 6px solid #5bc1ac; border-radius: 12px; padding: 20px 20px 20px 70px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative;">
-      <!-- Icon/GIF Positioned Left -->
-      <div style="position: absolute; top: 15px; left: 15px;">
-        <img src="images/Newnew1.gif" alt="New" style="width: 40px;">
-      </div>
-      <h5 style="color: #5bc1ac;">Upcoming Youth Empowerment Summit – August 2025</h5>
-      <p style="color: #555;">
-        We're excited to announce our Event <strong>Giving for charity Season 3</strong> happening on 
-        <strong>August, 2025</strong> in Tanga. This event will bring together students, graduates, and leaders 
-        to collaborate in community-driven projects and future collaborations.
-      </p>
-      <a href="news.html" class="btn btn-primary px-4 py-2 rounded-pill" style="background-color: #5bc1ac; border: none;">
-        View More News
-      </a>
+  
+<!-- News Item 1 -->
+<div class="col-lg-6 col-md-8 mb-4">
+  <div style="background: #fff; border-left: 6px solid #5bc1ac; border-radius: 12px; padding: 20px 20px 20px 70px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative;">
+    
+    <!-- Icon/GIF Positioned Left -->
+    <div style="position: absolute; top: 15px; left: 15px;">
+      <img src="{% static 'images/Newnew1.gif' %}" alt="New" style="width: 40px;">
     </div>
+    
+    <h5 style="color: #5bc1ac;">Upcoming Youth Empowerment Summit – August 2025</h5>
+    <p style="color: #555;">
+      We're excited to announce our Event <strong>Giving for charity Season 3</strong> happening on 
+      <strong>August, 2025</strong> in Tanga. This event will bring together students, graduates, and leaders 
+      to collaborate in community-driven projects and future collaborations.
+    </p>
+    
+    <a href="{% url 'news' %}" class="btn btn-primary px-4 py-2 rounded-pill" style="background-color: #5bc1ac; border: none;">
+      View More News
+    </a>
+    
   </div>
+</div>
 
   <!-- You can duplicate the above block for more news items -->
 

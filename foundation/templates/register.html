@@ -1,38 +1,220 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Tanga University Foundation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        .register-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
 
-    <div class="container mt-5">
-        <div class="register-container">
-            <h2><i class="bi bi-person-plus-fill me-2"></i>Join Tanga University Foundation</h2>
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                
-                <button type="submit" class="btn btn-custom w-100"><i class="bi bi-check-circle-fill me-1"></i> Register Now</button>
-            </form>
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7 col-lg-6">
+      <div class="card shadow register-card rounded-4">
+        <div class="card-header text-center text-white bg-gradient-primary rounded-top-4 py-4">
+          <h3 class="mb-1 text-white">
+            <i class="fas fa-user-graduate me-2"></i>Join the Tanga Uni Foundation
+          </h3>
+          <small class="text-white">Make a difference—support unity, compassion, and community impact</small>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        <div class="card-body p-4 p-md-5">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          <form method="POST" class="needs-validation" novalidate>
+            {% csrf_token %}
+
+            <!-- Personal Information -->
+            <section class="mb-4">
+              <h5 class="fw-semibold border-bottom pb-2 mb-3 text-secondary">
+                <i class="fas fa-id-card me-2"></i>Personal Information
+              </h5>
+
+              <!-- Full Name -->
+              <div class="mb-3">
+                <label for="{{ form.full_name.id_for_label }}" class="form-label fw-medium">Full Name <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-primary"><i class="fas fa-user"></i></span>
+                  {{ form.full_name|add_class:"form-control form-control-lg" }}
+                </div>
+                {% if form.full_name.errors %}
+                  <div class="invalid-feedback d-block">{{ form.full_name.errors.0 }}</div>
+                {% endif %}
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="{{ form.email.id_for_label }}" class="form-label fw-medium">Email Address <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-primary"><i class="fas fa-envelope"></i></span>
+                  {{ form.email|add_class:"form-control form-control-lg" }}
+                </div>
+                {% if form.email.errors %}
+                  <div class="invalid-feedback d-block">{{ form.email.errors.0 }}</div>
+                {% endif %}
+              </div>
+
+              <!-- Phone -->
+              <div class="mb-3">
+                <label for="{{ form.phone.id_for_label }}" class="form-label fw-medium">Phone Number <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-primary"><i class="fas fa-phone"></i></span>
+                  {{ form.phone|add_class:"form-control form-control-lg" }}
+                </div>
+                {% if form.phone.errors %}
+                  <div class="invalid-feedback d-block">{{ form.phone.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </section>
+
+            <!-- Membership Details -->
+            <section class="mb-4">
+              <h5 class="fw-semibold border-bottom pb-2 mb-3 text-secondary">
+                <i class="fas fa-users me-2"></i>Membership Details
+              </h5>
+
+              <!-- Member Type -->
+              <div class="mb-3">
+                <label for="{{ form.member_type.id_for_label }}" class="form-label fw-medium">Join As <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-primary"><i class="fas fa-user-tag"></i></span>
+                  {{ form.member_type|add_class:"form-select form-select-lg" }}
+                </div>
+                {% if form.member_type.errors %}
+                  <div class="invalid-feedback d-block">{{ form.member_type.errors.0 }}</div>
+                {% endif %}
+              </div>
+
+              <!-- University Name (conditional) -->
+              <!-- Use your exact university field HTML -->
+              <div class="mb-3 optional-section" id="universityNameSection" style="display:none;">
+                <label class="form-label">University Name</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-buildings-fill"></i></span>
+                  {{ form.university_name|add_class:"form-control form-control-lg" }}
+                </div>
+                {% if form.university_name.errors %}
+                  <div class="text-danger">{{ form.university_name.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </section>
+
+            <!-- Location Information -->
+            <section class="mb-4">
+              <h5 class="fw-semibold border-bottom pb-2 mb-3 text-secondary">
+                <i class="fas fa-map-marker-alt me-2"></i>Location Information
+              </h5>
+
+              <!-- Place of Living -->
+              <div class="mb-3">
+                <label for="{{ form.living_place.id_for_label }}" class="form-label fw-medium">Place of Living in Tanga <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-primary"><i class="fas fa-map-pin"></i></span>
+                  {{ form.living_place|add_class:"form-control form-control-lg" }}
+                </div>
+                {% if form.living_place.errors %}
+                  <div class="invalid-feedback d-block">{{ form.living_place.errors.0 }}</div>
+                {% endif %}
+              </div>
+
+              <!-- Address -->
+              <div class="mb-3">
+                <label for="{{ form.address.id_for_label }}" class="form-label fw-medium">Current Address</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-primary"><i class="fas fa-home"></i></span>
+                  {{ form.address|add_class:"form-control form-control-lg" }}
+                </div>
+                {% if form.address.errors %}
+                  <div class="invalid-feedback d-block">{{ form.address.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </section>
+
+            <!-- Submit -->
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-primary btn-lg rounded-pill fw-semibold">
+                <i class="fas fa-user-plus me-2"></i> Complete Registration
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const memberType = document.getElementById('id_member_type');
+    const universitySection = document.getElementById('universityNameSection');
+
+    function toggleUniversity() {
+      // Adjust this to your actual option value for university students
+      if (memberType.value === 'university_member') {
+        universitySection.style.display = 'block';
+        universitySection.querySelector('input').required = true;
+      } else {
+        universitySection.style.display = 'none';
+        universitySection.querySelector('input').required = false;
+      }
+    }
+
+    memberType.addEventListener('change', toggleUniversity);
+    toggleUniversity();
+
+    // Bootstrap 5 validation
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.prototype.slice.call(forms).forEach(function(form) {
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  });
+</script>
+
+<style>
+  .register-card {
+    max-width: 100%;
+    background: #fff;
+    border: none;
+  }
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #203864 0%, #3067b3 100%) !important;
+  }
+  .form-label {
+    color: #495057;
+  }
+  .input-group-text {
+    min-width: 48px;
+    justify-content: center;
+    border: 1px solid #ced4da;
+  }
+  .form-control:focus, .form-select:focus {
+    border-color: #203864;
+    box-shadow: 0 0 0 0.25rem rgba(32, 56, 100, 0.25);
+  }
+  .btn-primary {
+    background-color: #203864;
+    border-color: #203864;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: #142847;
+    border-color: #142847;
+  }
+  .text-secondary {
+    color: #6c757d !important;
+  }
+  .fw-medium {
+    font-weight: 500 !important;
+  }
+</style>
+{% endblock %}

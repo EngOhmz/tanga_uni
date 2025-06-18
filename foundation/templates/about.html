@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- About Us Page for Tanga Uni Foundation -->
+<section id="about" class="about section" style="background-color: #ffffff; padding-top: 60px;">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center">
+      <h2 style="color: #5bc1ac;">About Tanga Uni Foundation</h2>
+      <p style="color: #5bc1ac;">Empowering Communities Through Education, Unity, and Leadership</p>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <img src="{% static 'images/tanga_charity/pic13.jpeg' %}" class="img-fluid rounded shadow-sm" alt="About Tanga Uni Foundation">
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 content">
+        <h3 style="color: #5bc1ac;">Who We Are</h3>
+        <p class="fst-italic">
+          Tanga Uni Foundation is a youth-led non-profit organization established to foster educational support, community service, leadership development, and unity among university students and the Tanga region at large.
+        </p>
+        <ul>
+          <li><i class="bi bi-check-circle" style="color: #5bc1ac;"></i> Founded by students and alumni from various universities in Tanzania.</li>
+          <li><i class="bi bi-check-circle" style="color: #5bc1ac;"></i> Operates with a vision to uplift society through knowledge sharing and active participation.</li>
+          <li><i class="bi bi-check-circle" style="color: #5bc1ac;"></i> Encourages responsible leadership, mentorship, and social accountability.</li>
+        </ul>
+        <p>
+          We believe in the power of unity and knowledge to transform lives. By connecting students, professionals, and community members, we aim to build a strong network of changemakers who will shape the future of Tanga and Tanzania.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission, Vision, and Goals -->
+<section id="mission" class="mission section" style="background-color: #f9f9f9; padding-top: 60px; padding-bottom: 60px;">
+  <div class="container" data-aos="fade-up">
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <div class="card p-4 shadow-sm border-0 h-100">
+          <h4 style="color: #5bc1ac;">Our Mission</h4>
+          <p>
+            To unite university students and alumni for the development of Tanga through impactful projects, leadership initiatives, and academic support.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card p-4 shadow-sm border-0 h-100">
+          <h4 style="color: #5bc1ac;">Our Vision</h4>
+          <p>
+            To be a leading platform for academic excellence, leadership growth, and community empowerment within and beyond the Tanga region.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card p-4 shadow-sm border-0 h-100">
+          <h4 style="color: #5bc1ac;">Core Goals</h4>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✅ Promote education and mentorship.</li>
+            <li>✅ Engage in community outreach programs.</li>
+            <li>✅ Foster leadership, creativity, and innovation.</li>
+            <li>✅ Create platforms for networking and skills sharing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Team Section would go here -->
+{% endblock %}

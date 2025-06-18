@@ -1,8 +1,9 @@
+ {% extends 'base.html' %}
+{% load static %}
 
-
-
+{% block content %}
  <!-- Marquee for Page Description --> 
- <div class="bg-custom text-white py-2">
+<div class="bg-custom text-white py-2">
     <marquee behavior="scroll" direction="left" class="fw-bold">
         Welcome to the Tanga University Foundation! We are dedicated to supporting education excellence in Tanzania, providing opportunities and resources for students and institutions.
     </marquee>
@@ -103,3 +104,46 @@
 </style>
 </head>
 <body>
+
+
+<div class="gallery-container">
+    {% for image in images %}
+        <div class="gallery-item" onclick="openModal('{{ image.image.url }}')">
+            <img src="{{ image.image.url }}" alt="{{ image.title }}">
+            <p>{{ image.title }}</p>
+        </div>
+    {% empty %}
+        <div class="text-center">
+            <p class="text-muted">No images available in the gallery at the moment. Please check back later.</p>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="">
+</div>
+
+<script>
+function openModal(imageSrc) {
+    document.getElementById('modalImg').src = imageSrc;
+    document.getElementById('imageModal').style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById('imageModal').style.display = "none";
+}
+</script>
+
+
+<style>
+    /* Custom CSS to adjust the image size */
+.img-medium {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    max-width: 300px; /* Set the max-width to medium size */
+    margin: 0 auto; /* Center align the images */
+}
+</style>
+{% endblock %}

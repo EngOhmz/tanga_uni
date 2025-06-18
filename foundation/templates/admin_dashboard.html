@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Admin Dashboard - Tanga University Foundation{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+    <!-- Welcome Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2>Welcome, {{ user.first_name|default:user.username }}!</h2>
+                    <p class="text-muted">Tanga University Foundation Admin Dashboard</p>
+                </div>
+                <div>
+                    <a href="{% url 'index' %}" class="btn btn-outline-primary me-2">View Site</a>
+                    <a href="#" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>{{ total_events }}</h4>
+                            <p class="mb-0">Total Events</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-calendar fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>{{ total_news }}</h4>
+                            <p class="mb-0">News Articles</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-newspaper fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>{{ total_images }}</h4>
+                            <p class="mb-0">Gallery Images</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-images fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>{{ total_leaders }}</h4>
+                            <p class="mb-0">Team Leaders</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-2">
+                            <a href="/admin/foundation/event/add/" class="btn btn-outline-primary w-100">
+                                <i class="fas fa-plus me-2"></i>Add Event
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <a href="/admin/foundation/news/add/" class="btn btn-outline-success w-100">
+                                <i class="fas fa-plus me-2"></i>Add News
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <a href="/admin/foundation/galleryimage/add/" class="btn btn-outline-info w-100">
+                                <i class="fas fa-plus me-2"></i>Add Image
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <a href="/admin/foundation/leader/add/" class="btn btn-outline-warning w-100">
+                                <i class="fas fa-plus me-2"></i>Add Leader
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Content -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h5>Recent Events</h5>
+                    <a href="/admin/foundation/event/" class="btn btn-sm btn-primary">View All</a>
+                </div>
+                <div class="card-body">
+                    {% if recent_events %}
+                        <div class="list-group list-group-flush">
+                            {% for event in recent_events %}
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">{{ event.title }}</h6>
+                                        <small class="text-muted">{{ event.date|date:"M d, Y" }}</small>
+                                    </div>
+                                    <a href="/admin/foundation/event/{{ event.id }}/change/" class="btn btn-sm btn-outline-primary">Edit</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p class="text-muted">No events found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h5>Recent News</h5>
+                    <a href="/admin/foundation/news/" class="btn btn-sm btn-success">View All</a>
+                </div>
+                <div class="card-body">
+                    {% if recent_news %}
+                        <div class="list-group list-group-flush">
+                            {% for article in recent_news %}
+                                <div class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">{{ article.title }}</h6>
+                                        <small class="text-muted">{{ article.date_published|date:"M d, Y" }}</small>
+                                    </div>
+                                    <a href="/admin/foundation/news/{{ article.id }}/change/" class="btn btn-sm btn-outline-success">Edit</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p class="text-muted">No news articles found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

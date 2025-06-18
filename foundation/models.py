@@ -13,30 +13,32 @@ class Event(models.Model):
 
 class News(models.Model):
     title = models.CharField(max_length=200)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    description = models.TextField()
+    date_posted = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
 
+
 class GalleryImage(models.Model):
-    caption = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='gallery/')
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='all_uploaded/gallery_images/')
 
     def __str__(self):
-        return self.caption
+        return self.title
+
 
 class Leader(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='leaders/')  # Requires MEDIA settings
+    image = models.ImageField(upload_to='leaders/')
 
     def __str__(self):
         return self.name
 
 class ContactMessage(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
     date_sent = models.DateTimeField(auto_now_add=True)
