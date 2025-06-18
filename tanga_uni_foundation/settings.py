@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 
 
@@ -89,11 +90,23 @@ WSGI_APPLICATION = 'tanga_uni_foundation.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+# Database configuration
+# if 'DATABASE_URL' in os.environ:
+    # Production database (PostgreSQL on Render)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://msict_user:0sG3NcOumz0bE6bSTPm14p9GiNlpj34p@dpg-d16lp015pdvs73ffjvmg-a.oregon-postgres.render.com/msict',
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 
@@ -139,10 +152,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # your dev static files
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # where collectstatic copies all files
-
-
-
-
 
 
 # Default primary key field type
