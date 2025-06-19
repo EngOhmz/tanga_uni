@@ -265,7 +265,7 @@ font-weight: bold;
 <div class="container">
   <h2 class="mb-3" style="color: #5bc1ac;">Be Part of the Movement</h2>
   <p class="mb-4" style="color: #5bc1ac;">Whether you're a student, graduate, or a supporter—your participation matters. Join us in making a difference across Tanga and beyond.</p>
-  <a href="register.html" class="btn btn-light btn-lg rounded-pill px-4" style="background-color: #5bc1ac; color: white;">Join Us Now</a>
+  <a href="{% url 'register' %}" class="btn btn-light btn-lg rounded-pill px-4" style="background-color: #5bc1ac; color: white;">Join Us Now</a>
 </div>
 </section>
 
@@ -336,12 +336,13 @@ font-weight: bold;
 </section>
 
 <!-- How to Join Section for Tanga Uni Foundation -->
-<section id="how-to-join" class="py-5" style="background-color: #f7faff;">
-<div class="container">
-<div class="text-center mb-5">
-  <h2 class="fw-bold" style="color: #203864;">How Can I Join <span style="color: #5bc1ac;">Tanga Uni Foundation?</span></h2>
-  <p class="fs-5 text-muted">Take these simple steps to become part of our mission for positive change and community impact.</p>
-</div>
+<h5 style="color: #5bc1ac;">TANGA CHARITY SEASON 3 – 27th July 2025</h5>
+<p style="color: #555;">
+  We're excited to announce our upcoming event: <strong>TANGA CHARITY SEASON 3</strong>, happening on 
+  <strong>27th July 2025</strong> in Tanga. This inspiring gathering will unite students, graduates, and community leaders 
+  to collaborate on impactful charity initiatives, promote youth empowerment, and strengthen our commitment to social change.
+</p>
+
 
 <div class="row text-center g-4">
   <!-- Step 1 -->
@@ -380,7 +381,7 @@ font-weight: bold;
 
 <!-- Call to Action Button -->
 <div class="text-center mt-5">
-  <a href="register.html" class="btn btn-lg fw-semibold" style="background-color: #5bc1ac; color: white;">Join Us Now</a>
+  <a href="{% url 'register' %}" class="btn btn-lg fw-semibold" style="background-color: #5bc1ac; color: white;">Join Us Now</a>
 </div>
 </div>
 </section>
