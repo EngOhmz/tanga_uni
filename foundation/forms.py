@@ -30,8 +30,6 @@ class DonationForm(forms.ModelForm):
         fields = ['name', 'amount', 'message']
 
 
-     
-
 class ContactForm(forms.Form):
     first_name = forms.CharField(max_length=100, required=True,
                                  widget=forms.TextInput(attrs={'placeholder': 'First Name', 'class': 'form-control'}))
