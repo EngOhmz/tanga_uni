@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jv1o3j$%61=j0%ijl$-5rvm^^5d-7ef7ux!$ut%uwkhc*@=d8$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['tangaunifoundations.onrender.com', 'localhost', '127.0.0.1']
 
@@ -64,6 +64,8 @@ LOGIN_REDIRECT_URL = '/admin/'  # Or wherever you want to redirect after login
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'  # This points to your login_portal
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
 
 
 
@@ -153,6 +155,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # your dev static files
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # where collectstatic copies all files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
