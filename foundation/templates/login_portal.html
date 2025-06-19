@@ -62,11 +62,15 @@
 
   <div class="login-container">
     <h3 class="login-title" style="color: #48a891;">Tanga Uni Portal</h3>
-    
-    {% if form.errors %}
-      <div class="alert alert-danger">
-        <strong>Error:</strong> Invalid username or password.
-      </div>
+
+    <!-- Modern Error Display -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} d-flex align-items-center shadow-sm rounded-3 p-3 mb-4 animate__animated animate__fadeInDown" role="alert" style="background-color: #f8d7da; color: #721c24;">
+          <i class="fas fa-exclamation-circle me-2" style="font-size: 1.2rem;"></i>
+          <div class="flex-grow-1">{{ message }}</div>
+        </div>
+      {% endfor %}
     {% endif %}
 
     <form method="POST" action="{% url 'login_portal' %}">
@@ -89,13 +93,22 @@
         <i class="fas fa-arrow-right me-2"></i> Login
       </button>
 
-      <!-- Help Link -->
-      <div class="text-center mt-3">
-        <a href="{% url 'admin:index' %}" style="color:#203864;">Need help? Contact Admin</a>
-      </div>
+    <div class="text-center mt-3">
+  <a href="https://wa.me/255733352246" target="_blank" class="text-decoration-none fw-semibold" style="color: #203864;">
+    <i class="fab fa-whatsapp me-1" style="color: #25D366;"></i> Need help? Contact Admin on WhatsApp
+  </a>
+</div>
+
+</div>
+
     </form>
   </div>
 
+  <!-- Optional: Animate.css CDN for fade-in effect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </body>
+
+
 </html>
 {% endblock %}
